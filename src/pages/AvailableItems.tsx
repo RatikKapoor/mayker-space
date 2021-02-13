@@ -1,6 +1,6 @@
 import React from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import './Tab1.scss';
+import './AvailableItems.scss';
 
 import Item from '../Models/Item';
 import ItemView from '../components/ItemView';
@@ -14,7 +14,7 @@ const testItem = new Item(
     'https://drscdn.500px.org/photo/58131206/q%3D80_m%3D2000/v2?sig=d6e8d355df86733d2430b9a42c9af7718b324f3b49ff78e8983eb60673770553',
 );
 
-const Tab1: React.FC = () => {
+const AvailableItems: React.FC = () => {
     return (
         <IonPage>
             <IonHeader>
@@ -38,4 +38,4 @@ const Tab1: React.FC = () => {
     );
 };
 
-export default Tab1;
+export default AvailableItems;
