@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import mapboxgl from 'mapbox-gl';
+import Directions from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
+import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css'
 import './BaseMap.scss';
 
 const BaseMap = () => {
     mapboxgl.accessToken = 'pk.eyJ1Ijoic2Ftc29uaCIsImEiOiJja2w0OG15MXkwYnlwMnZxeHJveHNidWxvIn0.QSg83CVaQ3JwLPJJzMDp6w';
-
     useEffect(() => {
         const map = new mapboxgl.Map({
             container: 'mapContainer',
@@ -27,8 +28,14 @@ const BaseMap = () => {
             },
             trackUserLocation: true,
         });
-
         map.addControl(geolocate, 'top-right');
+        const directions = new Directions({
+            accessToken: 'pk.eyJ1Ijoic2Ftc29uaCIsImEiOiJja2w0OG15MXkwYnlwMnZxeHJveHNidWxvIn0.QSg83CVaQ3JwLPJJzMDp6w',
+            unit: 'metric',
+            profile: 'mapbox/cycling'
+        });
+        map.addControl(directions, 'top-left');
+
     }, []);
     return <div id="mapContainer" className="map"></div>;
 };
