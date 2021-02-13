@@ -1,6 +1,6 @@
 import React from 'react';
 import { IonDatetime, IonInput, IonItem, IonLabel, IonList } from '@ionic/react';
-import './ItemView.css';
+import './ItemView.scss';
 
 const ItemView: React.FC = () => {
     return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/react';
-import './ItemView.css';
+import './ItemView.scss';
 import Item from '../Models/Item';
 
 interface ItemProps {
