@@ -1,0 +1,7 @@
+{
+  "name": "mayker-space",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
