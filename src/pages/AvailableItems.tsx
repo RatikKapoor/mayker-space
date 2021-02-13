@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import './AvailableItems.scss';
 
 import Item from '../Models/Item';
@@ -29,10 +29,12 @@ const AvailableItems: React.FC = () => {
                     </IonToolbar>
                 </IonHeader>
                 <ItemRequest />
-                <ItemView item={testItem} />
-                <ItemView item={testItem} />
-                <ItemView item={testItem} />
-                <ItemView item={testItem} />
+                <IonList>
+                    <ItemView item={testItem} />
+                    <ItemView item={testItem} />
+                    <ItemView item={testItem} />
+                    <ItemView item={testItem} />
+                </IonList>
             </IonContent>
         </IonPage>
     );

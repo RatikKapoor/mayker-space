@@ -10,7 +10,7 @@ interface ItemProps {
 const ItemView: React.FC<ItemProps> = (props: ItemProps) => {
     return (
         <IonCard>
-            <img src={props.item.imageUrl}></img>
+            <img src={props.item.imageUrl} className="headImage"></img>
             <IonCardHeader>
                 <IonCardSubtitle>{props.item.category}</IonCardSubtitle>
                 <IonCardTitle>{props.item.name}</IonCardTitle>
