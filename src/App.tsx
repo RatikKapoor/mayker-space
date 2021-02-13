@@ -2,10 +2,10 @@ import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonIcon, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { bagHandle, mapOutline, person } from 'ionicons/icons';
-import Tab1 from './pages/Tab1';
-import Tab2 from './pages/Tab2';
-import Tab3 from './pages/Tab3';
+import { bagHandle, mapOutline, person, } from 'ionicons/icons';
+import AvailableItems from './pages/AvailableItems';
+import Map from './pages/Map';
+import Profile from './pages/YourProfile';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -31,29 +31,29 @@ const App: React.FC = () => (
         <IonReactRouter>
             <IonTabs>
                 <IonRouterOutlet>
-                    <Route exact path="/tab1">
-                        <Tab1 />
+                    <Route exact path="/items">
+                        <AvailableItems />
                     </Route>
-                    <Route exact path="/tab2">
-                        <Tab2 />
+                    <Route exact path="/map">
+                        <Map />
                     </Route>
-                    <Route path="/tab3">
-                        <Tab3 />
+                    <Route path="/me">
+                        <Profile />
                     </Route>
                     <Route exact path="/">
-                        <Redirect to="/tab1" />
+                        <Redirect to="/items" />
                     </Route>
                 </IonRouterOutlet>
                 <IonTabBar slot="bottom">
-                    <IonTabButton tab="tab1" href="/tab1">
+                    <IonTabButton tab="items" href="/items">
                         <IonIcon icon={bagHandle} />
                         <IonLabel>Available Items</IonLabel>
                     </IonTabButton>
-                    <IonTabButton tab="tab2" href="/tab2">
+                    <IonTabButton tab="map" href="/map">
                         <IonIcon icon={mapOutline} />
                         <IonLabel>Routes</IonLabel>
                     </IonTabButton>
-                    <IonTabButton tab="tab3" href="/tab3">
+                    <IonTabButton tab="profile" href="/me">
                         <IonIcon icon={person} />
                         <IonLabel>Your Items</IonLabel>
                     </IonTabButton>

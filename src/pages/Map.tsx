@@ -1,10 +1,11 @@
 import React from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
-import './Tab2.scss';
-import BaseMap from '../components/BaseMap';
 
-const Tab2: React.FC = () => {
+import BaseMap from '../components/BaseMap';
+import './Map.scss';
+
+const Map: React.FC = () => {
     return (
         <IonPage>
             <BaseMap />
@@ -12,4 +13,4 @@ const Tab2: React.FC = () => {
     );
 };
 
-export default Tab2;
+export default Map;
