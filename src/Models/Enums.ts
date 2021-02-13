@@ -3,5 +3,3 @@ export enum ItemCategory {
     Component = 'component',
     Hardware = 'hardware'
 }
-
-export enum Ite
