@@ -10,7 +10,7 @@ const BaseMap = () => {
         const map = new mapboxgl.Map({
             container: 'mapContainer',
             style: 'mapbox://styles/mapbox/streets-v11',
-            center: [-113.92, 50.9],
+            center: [-117.1425, 32.63638889],
             zoom: 14,
         });
         //Set navigation controls
@@ -29,7 +29,10 @@ const BaseMap = () => {
             accessToken: 'pk.eyJ1Ijoic2Ftc29uaCIsImEiOiJja2w0OG15MXkwYnlwMnZxeHJveHNidWxvIn0.QSg83CVaQ3JwLPJJzMDp6w',
             unit: 'metric',
             profile: 'mapbox/driving',
+            interactive: false,
         });
+        directions.setOrigin([-117.1425, 32.63638889]);
+        directions.setDestination([-116.5616667, 32.93583333]);
         map.addControl(directions, 'top-left');
     }, []);
     return <div id="mapContainer" className="map"></div>;
