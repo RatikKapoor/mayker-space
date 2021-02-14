@@ -23,13 +23,13 @@ const Landing: React.FC = () => {
                             </IonButton>
                         </IonCol>
                         <IonCol size="8" className="IonColRight">
-                            <IonButton fill="clear">
+                            <IonButton fill="clear" href="#aboutUsPage">
                                 <IonLabel className="aboutUsButton">About Us</IonLabel>
                             </IonButton>
-                            <IonButton fill="clear">
+                            <IonButton fill="clear" href="#servicePage">
                                 <IonLabel className="whiteButton">Services</IonLabel>
                             </IonButton>
-                            <IonButton fill="clear">
+                            <IonButton fill="clear" href="#contactPage">
                                 <IonLabel className="whiteButton">Contact Us</IonLabel>
                             </IonButton>
                             <IonButton fill="clear" onClick={() => history.push('/login')}>
@@ -42,7 +42,7 @@ const Landing: React.FC = () => {
                 </IonGrid>
             </IonHeader>
             <IonContent className="homeContainer">
-                <img src={landingbg} />
+                <img src={landingbg} id="aboutUsPage" />
                 <img src={aboutUs} className="aboutUs" />
                 <img src={community} className="community" />
                 <img src={team} className="team" />
