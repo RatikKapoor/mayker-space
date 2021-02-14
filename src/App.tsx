@@ -27,18 +27,20 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.scss';
+import Landing from './pages/Landing';
 
 const App: React.FC = () => (
     <IonApp>
         <IonReactRouter>
             <IonTabs>
                 <IonRouterOutlet>
+                    <Route exact path="/landing" component={Landing} />
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/register" component={Register} />
                     <Route exact path="/items" component={AvailableItems} />
                     <Route exact path="/map" component={Map} />
                     <Route path="/me" component={Profile} />
-                    <Route exact path="/" render={() => <Redirect to="/items" />} />
+                    <Route exact path="/" render={() => <Redirect to="/landing" />} />
                 </IonRouterOutlet>
                 <IonTabBar slot="bottom">
                     <IonTabButton tab="items" href="/items">
