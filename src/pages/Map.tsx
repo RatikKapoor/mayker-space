@@ -46,7 +46,6 @@ const Map: React.FC = () => {
 
     return (
         <IonPage>
-            <BaseMap route={testRoute} />
             <IonButton onClick={() => setNewRouteViewVisible(true)}>+</IonButton>
             <IonList>
                 {routes
