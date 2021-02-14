@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { IonButton, IonContent, IonHeader, IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonContent, IonGrid, IonHeader, IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import './AvailableItems.scss';
 import { ItemDoc } from '../Models/DocTypes';
 import Item from '../Models/Item';
@@ -52,11 +52,11 @@ const AvailableItems: React.FC = () => {
 
     return (
         <IonPage>
-            <IonHeader>
-                <IonToolbar>
+            <IonHeader className="IonHeader">
+                <IonGrid className="IonToolbar">
                     <IonTitle>Available Items</IonTitle>
                     <IonButton onClick={() => setNewItemViewVisible(true)}>+</IonButton>
-                </IonToolbar>
+                </IonGrid>
             </IonHeader>
             <IonContent fullscreen>
                 <IonHeader collapse="condense">
