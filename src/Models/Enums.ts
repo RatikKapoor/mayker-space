@@ -1,5 +1,5 @@
 export enum ItemCategory {
-    Microcontroller = 'micrcontroller',
-    Component = 'component',
-    Hardware = 'hardware',
+    Microcontroller = 'Microcontroller',
+    Component = 'Component',
+    Hardware = 'Hardware',
 }

@@ -1,5 +1,8 @@
+import { ItemDoc } from './DocTypes';
 import { ItemCategory } from './Enums';
-import User from './User';
+import { Timestamp } from './Firebase';
+import FireStoreDB from './Firestore';
+
 export default class Item {
     /**
      * A class for holding a tool that is available for renting
@@ -7,7 +10,7 @@ export default class Item {
 
     id: string;
     name: string;
-    category: string;
+    category: ItemCategory;
     description: string;
     imageUrl: string;
     latitude: number;
@@ -26,11 +29,16 @@ export default class Item {
     ) {
         this.id = id;
         this.name = name;
-        this.category = category.toString();
+        this.category = category;
         this.description = description;
         this.imageUrl = imageUrl;
         this.latitude = latitude;
         this.longitude = longitude;
         this.uid = uid;
+    }
+
+    public static async addItem(item: ItemDoc): Promise<void> {
+        const fireStoreDB = new FireStoreDB();
+        await fireStoreDB.uploadDoc<ItemDoc>('items', item);
     }
 }

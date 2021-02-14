@@ -1,8 +1,9 @@
+import firebase from 'firebase';
 import app, { DocumentData, WhereFilterOp } from './Firebase';
 
 export default class FireStoreDB {
     // static db = app.firestore();
-    db;
+    db: firebase.firestore.Firestore;
 
     constructor() {
         this.db = app.firestore();
@@ -31,7 +32,8 @@ export default class FireStoreDB {
 
     public async uploadDoc<DocType>(collection: string, fields: DocType): Promise<void> {
         try {
-            await this.db.collection(collection).doc().set(fields);
+            const res = await this.db.collection(collection).doc().set(fields);
+            console.log('Upload result', res);
         } catch (err) {
             console.warn(err);
         }
