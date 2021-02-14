@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { ItemDoc } from '../Models/DocTypes';
 import { ItemCategory } from '../Models/Enums';
 import Item from '../Models/Item';
+import './NewItemView.scss';
 
 interface NewItemViewProps {
     isOpen: boolean;

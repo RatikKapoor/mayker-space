@@ -45,7 +45,9 @@ const Landing: React.FC = () => {
                                 <IonLabel className="whiteButton">Contact Us</IonLabel>
                             </IonButton>
                             <IonButton fill="clear" onClick={() => history.push('/login')}>
-                                <IonLabel className="login">Login</IonLabel>
+                                <IonLabel className="login" color="danger">
+                                    Login
+                                </IonLabel>
                             </IonButton>
                         </IonCol>
                     </IonRow>

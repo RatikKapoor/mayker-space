@@ -10,19 +10,25 @@
 }
 
 .itemImg {
-    order: 5;
-    object-fit: cover;
-    width: 100%;
-    height: 10em;
+    // order: 5;
+    // object-fit: cover;
+    width: 45%;
+    // height: 10em;
+    @media only screen and (max-width: 600px) {
+        width: 90%;
+    }
 }
 
-.iconButtons {
-    order: 10;
+.ImgGrid {
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
 }
 
 .iconButton {
     --border-radius: 0;
     --color: #ffffff;
+    text-align: center;
 }
 
 .itemDescription {
