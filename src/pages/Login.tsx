@@ -62,6 +62,9 @@ const Login: React.FC = () => {
                     <IonButton className="loginButtons" onClick={() => handleSubmit(email, password)}>
                         Log In
                     </IonButton>
+                    <IonButton className="loginButtons" onClick={() => history.push('/register')}>
+                        Register
+                    </IonButton>
                 </IonButtons>
             </IonContent>
         </IonPage>
