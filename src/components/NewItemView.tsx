@@ -1,4 +1,4 @@
-import { IonButton, IonInput, IonModal, IonPage, IonPicker, IonSelect, IonSelectOption } from '@ionic/react';
+import { IonButton, IonInput, IonModal, IonSelect, IonSelectOption } from '@ionic/react';
 import React, { useState } from 'react';
 import { ItemDoc } from '../Models/DocTypes';
 import { ItemCategory } from '../Models/Enums';

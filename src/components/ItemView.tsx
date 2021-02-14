@@ -34,7 +34,7 @@ const ItemView: React.FC<ItemProps> = (props: ItemProps) => {
                         <IonImg src={props.item.imageUrl} className="itemImg" />
                     </IonRow>
                 </IonGrid>
-                <ItemButtons />
+                <ItemButtons item={props.item} />
             </IonGrid>
         </IonItem>
     );

@@ -1,6 +1,5 @@
 import { ItemDoc } from './DocTypes';
 import { ItemCategory } from './Enums';
-import { Timestamp } from './Firebase';
 import FireStoreDB from './Firestore';
 
 export default class Item {

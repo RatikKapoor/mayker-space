@@ -73,7 +73,7 @@ const AvailableItems: React.FC = () => {
                                       key={k}
                                       item={
                                           new Item(
-                                              'items/' + v.id,
+                                              v.id,
                                               v.data.name,
                                               ItemCategory.Component,
                                               v.data.description,
