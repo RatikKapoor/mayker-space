@@ -1,13 +1,8 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-// import mapboxgl from 'mapbox-gl';
-// import Directions from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
+import React, { useCallback, useState } from 'react';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import MapGL, { GeolocateControl, Marker, Popup } from 'react-map-gl';
-// import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css';
+import MapGL, { GeolocateControl, Marker } from 'react-map-gl';
 import './BaseMap.scss';
 import Route from '../Models/Route';
-import Pin from './Pin';
-import { IonText } from '@ionic/react';
 
 interface MapProps {
     route: Route;
@@ -29,11 +24,8 @@ const positionOptions = { enableHighAccuracy: true };
 
 const BaseMap: React.FC<MapProps> = (props: MapProps) => {
     const accessToken = 'pk.eyJ1Ijoic2Ftc29uaCIsImEiOiJja2w0OG15MXkwYnlwMnZxeHJveHNidWxvIn0.QSg83CVaQ3JwLPJJzMDp6w';
-    const [popupInfo, setPopupInfo] = useState(null);
 
     const [viewport, setViewport] = useState({
-        // width: au,
-        // height: 400,
         latitude: 37.7577,
         longitude: -122.4376,
         zoom: 1,

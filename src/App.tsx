@@ -34,7 +34,6 @@ import app from './Models/Firebase';
 import { PrivateRoute } from './components/PrivateRoute';
 
 const App: React.FC = () => {
-    const history = useHistory();
     const [authed, setAuthed] = useState<boolean | null>();
 
     useEffect(() => {
@@ -42,12 +41,8 @@ const App: React.FC = () => {
             setAuthed(Boolean(user));
             if (user) {
                 console.log('User:', user);
-                // redirectAfterAuthEvent('/items');
-                // history.push('/items');
             } else {
-                // redirectAfterAuthEvent('/login');
                 console.log('No user');
-                // history.push('/login');
             }
         });
         return () => {

@@ -1,5 +1,5 @@
-import { IonButton, IonContent, IonGrid, IonIcon, IonLabel, IonRow } from '@ionic/react';
-import { chatbox, chatboxEllipses, pin, send } from 'ionicons/icons';
+import { IonButton, IonGrid, IonIcon, IonLabel, IonRow } from '@ionic/react';
+import { chatboxEllipses, pin, send } from 'ionicons/icons';
 import React from 'react';
 import './ItemView.scss';
 import './ItemButtons.scss';
