@@ -22,11 +22,11 @@ const Login: React.FC = () => {
 
     async function handleSubmit(email: string, password: string) {
         if (await User.login(email, password)) {
-            alert('Login success');
+            // alert('Login success');
             // redirectAfterAuthEvent('/items');
             history.push('/items');
         } else {
-            alert('Could not login');
+            alert('Could not login, please check your credentials');
         }
     }
 
