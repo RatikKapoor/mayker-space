@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { IonContent, IonHeader, IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonContent, IonHeader, IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import './AvailableItems.scss';
 import { ItemDoc } from '../Models/DocTypes';
 import Item from '../Models/Item';
@@ -8,6 +8,7 @@ import ItemRequest from '../components/ItemRequest';
 import FireStoreDB from '../Models/Firestore';
 import { loadingComponent } from '../components/Loading';
 import { ItemCategory } from '../Models/Enums';
+import NewItemView from '../components/NewItemView';
 
 // const testItem = new Item(
 //     'ABC123',
@@ -19,7 +20,9 @@ import { ItemCategory } from '../Models/Enums';
 
 const AvailableItems: React.FC = () => {
     const [items, setItems] = useState<Array<{ id: string; data: ItemDoc }>>();
+    const [newItemViewVisible, setNewItemViewVisible] = useState<boolean>(false);
     const db = new FireStoreDB();
+
     async function getItems() {
         const unsub = db.db
             .collection('items')
@@ -52,6 +55,7 @@ const AvailableItems: React.FC = () => {
             <IonHeader>
                 <IonToolbar>
                     <IonTitle>Available Items</IonTitle>
+                    <IonButton onClick={() => setNewItemViewVisible(true)}>+</IonButton>
                 </IonToolbar>
             </IonHeader>
             <IonContent fullscreen>
@@ -85,6 +89,7 @@ const AvailableItems: React.FC = () => {
                         : loadingComponent}
                 </IonList>
             </IonContent>
+            <NewItemView isOpen={newItemViewVisible} closeCallback={setNewItemViewVisible} />
         </IonPage>
     );
 };
