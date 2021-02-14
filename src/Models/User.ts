@@ -27,7 +27,7 @@ export default class User {
         }
     }
 
-    private static async signUp(
+    public static async signUp(
         firstName: string,
         lastName: string,
         email: string,
