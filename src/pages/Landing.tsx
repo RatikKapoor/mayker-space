@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTabBar, IonTabButton, } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTabBar, IonTabButton, IonLabel} from '@ionic/react';
 import React from 'react';
 import './Landing.scss';
 import landingbg from './images/home.svg';
