@@ -1,4 +1,116 @@
+.scrollhost::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollhost ::-moz-scrollbar {
+    display: none;
+   
+  }
+  
+  .scrollhost {
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-color: transparent transparent; /*just hides the scrollbar for firefox */
+  }
+
 .homeContainer {
+    position: absolute;
     --background: none;
     background-color: #111111;
+}
+.tabBar{
+    position: relative;
+    --background: none;
+    font-size: 40px;
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px 17px;
+}
+
+.aboutUsButton{
+    position: relative;
+    left: 0%;
+    padding: 5px;
+    color:white;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+
+.whiteButton{
+    position: relative;
+    padding: 5px;
+    color:white;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    font-family: "Archivo";
+}
+
+.aboutUs{
+    width:70%;
+    top: 1290px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto
+}
+
+.community{
+    width:100%;
+    top: 2194px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto
+}
+
+.team{
+    width:80%;
+    top: 3350px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto
+}
+
+.our_service{
+    width:80%;
+    top: 4050px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto
+}
+
+.share{
+    width:70%;
+    top: 5200px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto
+}
+
+.signUp{
+    background: #CF2B57;
+    border-radius: 20.9538px;
+    position: relative;
+    padding: 10px 25px;
+    color:white;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    font-family: "Archivo";
+}
+.image img{
+    height: 120%;
+    position: fixed;
+    margin: 30px 50px 10px 50px;
+    left: 0;
+    display:inline;
 }
