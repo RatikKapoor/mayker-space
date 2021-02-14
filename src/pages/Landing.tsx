@@ -1,4 +1,16 @@
-import { IonContent, IonHeader, IonPage, IonTabBar, IonTabButton, IonLabel } from '@ionic/react';
+import {
+    IonContent,
+    IonHeader,
+    IonPage,
+    IonTabBar,
+    IonTabButton,
+    IonLabel,
+    IonButton,
+    IonGrid,
+    IonImg,
+    IonRow,
+    IonCol,
+} from '@ionic/react';
 import React from 'react';
 import './Landing.scss';
 import landingbg from './images/home.svg';
@@ -7,28 +19,37 @@ import community from './images/community.svg';
 import team from './images/team.svg';
 import ourService from './images/our_service.svg';
 import share from './images/share.svg';
+import landing_logo from './images/landing_logo.svg';
+import { useHistory } from 'react-router-dom';
 
 const Landing: React.FC = () => {
+    const history = useHistory();
     return (
         <IonPage>
-            <IonHeader>
-                <IonTabBar className="tabBar">
-                    <IonTabButton className="image">
-                        <img src="https://i.imgur.com/F0NPu4M.png"></img>
-                    </IonTabButton>
-                    <IonTabButton href="#items">
-                        <IonLabel className="aboutUsButton">About Us</IonLabel>
-                    </IonTabButton>
-                    <IonTabButton>
-                        <IonLabel className="whiteButton">Services</IonLabel>
-                    </IonTabButton>
-                    <IonTabButton>
-                        <IonLabel className="whiteButton">Contact Us</IonLabel>
-                    </IonTabButton>
-                    <IonTabButton>
-                        <IonLabel className="signUp">Sign Up</IonLabel>
-                    </IonTabButton>
-                </IonTabBar>
+            <IonHeader className="IonHeader">
+                <IonGrid className="IonGrid">
+                    <IonRow className="tabRow">
+                        <IonCol size="4">
+                            <IonButton className="image" fill="clear">
+                                <IonImg src={landing_logo} className="IonImg" />
+                            </IonButton>
+                        </IonCol>
+                        <IonCol size="8" className="IonColRight">
+                            <IonButton fill="clear">
+                                <IonLabel className="aboutUsButton">About Us</IonLabel>
+                            </IonButton>
+                            <IonButton fill="clear">
+                                <IonLabel className="whiteButton">Services</IonLabel>
+                            </IonButton>
+                            <IonButton fill="clear">
+                                <IonLabel className="whiteButton">Contact Us</IonLabel>
+                            </IonButton>
+                            <IonButton fill="clear" onClick={() => history.push('/login')}>
+                                <IonLabel className="login">Login</IonLabel>
+                            </IonButton>
+                        </IonCol>
+                    </IonRow>
+                </IonGrid>
             </IonHeader>
             <IonContent className="homeContainer">
                 <img src={landingbg} />
