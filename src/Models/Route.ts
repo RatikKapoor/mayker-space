@@ -12,6 +12,7 @@ export default class Route {
     destinationlat: number;
     destinationlon: number;
     iid: string;
+    name: string;
 
     constructor(
         id: string,
@@ -20,6 +21,7 @@ export default class Route {
         destinationlat: number,
         destinationlon: number,
         iid: string,
+        name: string,
     ) {
         this.id = id;
         this.originlat = originlat;
@@ -27,6 +29,7 @@ export default class Route {
         this.destinationlat = destinationlat;
         this.destinationlon = destinationlon;
         this.iid = iid;
+        this.name = name;
     }
 
     public static async addRoute(route: RouteDoc): Promise<void> {

@@ -28,7 +28,7 @@ const BaseMap: React.FC<MapProps> = (props: MapProps) => {
     const [viewport, setViewport] = useState({
         latitude: 37.7577,
         longitude: -122.4376,
-        zoom: 1,
+        zoom: 6,
     });
     const handleViewportChange = useCallback((newViewport) => setViewport(newViewport), []);
     return (
@@ -57,13 +57,13 @@ const BaseMap: React.FC<MapProps> = (props: MapProps) => {
                         </svg>
                     </Marker>
                 )}
-                <Marker key={`marker-1`} longitude={props.route.destinationlon} latitude={props.route.destinationlat}>
+                <Marker key={`marker-2`} longitude={props.route.destinationlon} latitude={props.route.destinationlat}>
                     <svg
                         height={SIZE}
                         viewBox="0 0 24 24"
                         style={{
                             cursor: 'pointer',
-                            fill: '#d00',
+                            fill: '#00d',
                             stroke: 'none',
                             transform: `translate(${-SIZE / 2}px,${-SIZE}px)`,
                         }}
