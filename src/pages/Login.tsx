@@ -45,20 +45,23 @@ const Login: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent className="loginContainer">
-                <IonTitle>Log In</IonTitle>
+                <IonTitle class="loginTitle">Log In</IonTitle>
                 <IonInput
+                    className="loginBox"
                     placeholder="Enter your Email Address"
                     type="email"
                     onIonChange={(e) => setEmail(e.detail.value ?? '')}
                 />
                 <IonInput
+                    className="loginBox"
                     placeholder="Enter your Password"
                     type="password"
                     onIonChange={(e) => setPassword(e.detail.value ?? '')}
                 />
-                <IonButtons>
-                    <IonButton onClick={() => handleSubmit(email, password)}>Log In</IonButton>
-                    <IonButton onClick={() => handleLogout()}>Log Out</IonButton>
+                <IonButtons className="loginButtonContainer">
+                    <IonButton className="loginButtons" onClick={() => handleSubmit(email, password)}>
+                        Log In
+                    </IonButton>
                 </IonButtons>
             </IonContent>
         </IonPage>
