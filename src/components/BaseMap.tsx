@@ -4,7 +4,7 @@ import Directions from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
 import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css';
 import './BaseMap.scss';
 
-const BaseMap = () => {
+const BaseMap: React.FC = () => {
     mapboxgl.accessToken = 'pk.eyJ1Ijoic2Ftc29uaCIsImEiOiJja2w0OG15MXkwYnlwMnZxeHJveHNidWxvIn0.QSg83CVaQ3JwLPJJzMDp6w';
     useEffect(() => {
         const map = new mapboxgl.Map({
