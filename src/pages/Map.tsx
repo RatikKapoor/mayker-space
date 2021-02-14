@@ -1,4 +1,4 @@
-import { IonList, IonPage, IonItem } from '@ionic/react';
+import { IonList, IonPage, IonButton } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
 import BaseMap from '../components/BaseMap';
 import './Map.scss';
@@ -6,6 +6,7 @@ import { RouteDoc } from '../Models/DocTypes';
 import FireStoreDB from '../Models/Firestore';
 import { loadingComponent } from '../components/Loading';
 import RouteListing from '../components/RouteListing';
+import MapView from '../components/MapView';
 
 import Route from '../Models/Route';
 
@@ -46,6 +47,7 @@ const Map: React.FC = () => {
     return (
         <IonPage>
             <BaseMap route={testRoute} />
+            <IonButton onClick={() => setNewRouteViewVisible(true)}>+</IonButton>
             <IonList>
                 {routes
                     ? routes.map((v, k) => {
@@ -67,7 +69,7 @@ const Map: React.FC = () => {
                       })
                     : loadingComponent}
             </IonList>
-            {/* <BaseMap /> */}
+            <MapView isOpen={newRouteViewVisible} route={testRoute} closeCallback={setNewRouteViewVisible} />
         </IonPage>
     );
 };
