@@ -33,31 +33,38 @@ const Register: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent className="registerContainer">
-                <IonTitle>Register</IonTitle>
+                <IonTitle className="registerTitle">Register</IonTitle>
                 <IonInput
+                    class="registerBox"
                     placeholder="Enter your first name"
                     type="text"
                     onIonChange={(e) => setFirstName(e.detail.value ?? '')}
                 />
                 <IonInput
+                    class="registerBox"
                     placeholder="Enter your last name"
                     type="text"
                     onIonChange={(e) => setLastName(e.detail.value ?? '')}
                 />
                 <IonInput
+                    class="registerBox"
                     placeholder="Enter your Email Address"
                     type="email"
                     onIonChange={(e) => setEmail(e.detail.value ?? '')}
                 />
                 <IonInput
+                    class="registerBox"
                     placeholder="Enter your Password"
                     type="password"
                     onIonChange={(e) => setPassword(e.detail.value ?? '')}
                 />
                 {/* TODO: Make re-enter validation work */}
-                <IonInput placeholder="Re-enter your Password" type="password" />
-                <IonButtons>
-                    <IonButton onClick={() => handleSubmit(email, password, firstName, lastName)}>
+                <IonInput class="registerBox" placeholder="Re-enter your Password" type="password" />
+                <IonButtons class="registerButtonContainer">
+                    <IonButton
+                        class="registerButtons"
+                        onClick={() => handleSubmit(email, password, firstName, lastName)}
+                    >
                         Register Now
                     </IonButton>
                 </IonButtons>
