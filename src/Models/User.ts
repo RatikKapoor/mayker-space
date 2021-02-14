@@ -1,7 +1,6 @@
 import { UserDoc } from './DocTypes';
 import app from './Firebase';
 import FireStoreDB from './Firestore';
-import FireBaseDB from './Firestore';
 
 export default class User {
     firstName: string;

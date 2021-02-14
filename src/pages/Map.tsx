@@ -1,6 +1,5 @@
 import { IonList, IonPage, IonButton } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
-import BaseMap from '../components/BaseMap';
 import './Map.scss';
 import { RouteDoc } from '../Models/DocTypes';
 import FireStoreDB from '../Models/Firestore';

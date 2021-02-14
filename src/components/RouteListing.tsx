@@ -1,7 +1,6 @@
 import React from 'react';
-import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonItem } from '@ionic/react';
+import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/react';
 import Route from '../Models/Route';
-import BaseMap from './BaseMap';
 
 interface RouteProps {
     route: Route;
