@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import mapboxgl from 'mapbox-gl';
 import Directions from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
-import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css'
+import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css';
 import './BaseMap.scss';
 
 const BaseMap = () => {
@@ -31,7 +31,6 @@ const BaseMap = () => {
             profile: 'mapbox/driving',
         });
         map.addControl(directions, 'top-left');
-
     }, []);
     return <div id="mapContainer" className="map"></div>;
 };
