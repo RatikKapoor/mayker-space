@@ -20,7 +20,7 @@ const MapView: React.FC<NewItemViewProps> = (props: NewItemViewProps) => {
     // const [longitude, setLongitude] = useState<number>(0);
 
     return (
-        <IonModal isOpen={props.isOpen} onDidDismiss={() => props.closeCallback(false)}>
+        <IonModal isOpen={props.isOpen} onDidDismiss={() => props.closeCallback()}>
             <BaseMap route={props.route} />
         </IonModal>
     );

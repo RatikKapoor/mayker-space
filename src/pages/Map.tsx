@@ -11,7 +11,8 @@ import Route from '../Models/Route';
 
 const Map: React.FC = () => {
     const [routes, setRoutes] = useState<Array<{ id: string; data: RouteDoc }>>();
-    const [newRouteViewVisible, setNewRouteViewVisible] = useState<boolean>(false);
+    const [showMap, setShowMap] = useState<boolean>();
+    const [route, setRoute] = useState<Route>();
 
     const db = new FireStoreDB();
 
@@ -42,11 +43,11 @@ const Map: React.FC = () => {
         };
     }, [routes]);
 
-    const testRoute = new Route('test', 37.7577, -122.4376, 37.7677, -122.4568, 'herlnkjf');
+    const testRoute = new Route('test', 37.7577, -122.4376, 37.7677, -122.4568, 'herlnkjf', 'customTest');
 
     return (
         <IonPage>
-            <IonButton onClick={() => setNewRouteViewVisible(true)}>+</IonButton>
+            {/* <IonButton onClick={() => setNewRouteViewVisible(true)}>+</IonButton> */}
             <IonList>
                 {routes
                     ? routes.map((v, k) => {
@@ -61,14 +62,17 @@ const Map: React.FC = () => {
                                           v.data.destinationlat,
                                           v.data.destinationlon,
                                           v.data.iid,
+                                          v.data.name,
                                       )
                                   }
+                                  showMap={setShowMap}
+                                  setRoute={setRoute}
                               />
                           );
                       })
                     : loadingComponent}
             </IonList>
-            <MapView isOpen={newRouteViewVisible} route={testRoute} closeCallback={setNewRouteViewVisible} />
+            {route && <MapView isOpen={showMap !== undefined} route={route} closeCallback={setShowMap} />}
         </IonPage>
     );
 };

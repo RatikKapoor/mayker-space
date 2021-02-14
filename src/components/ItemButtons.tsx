@@ -20,6 +20,7 @@ const ItemButtons: React.FC<ItemButtonProps> = (props: ItemButtonProps) => {
             destinationlat: 51.077472,
             destinationlon: -114.139632,
             iid: props.item.id,
+            name: 'Test',
         };
         Route.addRoute(newRoute);
         alert('You have sucessfuly requested the item, a route has now been created');

@@ -23,5 +23,6 @@ export interface RouteDoc {
     destinationlat: number;
     destinationlon: number;
     iid: string;
+    name: string;
     [key: string]: any;
 }
