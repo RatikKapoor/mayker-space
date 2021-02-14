@@ -1,6 +1,6 @@
 .loginContainer {
     --background: none;
-    background-color: #0d0d0d;
+    background-color:#111111;
     background-image: url(./images/login.svg);
     background-repeat: no-repeat;
     background-size: contain;
@@ -43,7 +43,18 @@
 }
 
 .loginButtonContainer {
-    top: 43%;
+    top: 33%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.loginButtonContainer2 {
+    top: 34%;
     position: relative;
     display: flex;
     flex-direction: row;
