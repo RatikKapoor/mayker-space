@@ -26,7 +26,7 @@ const Landing: React.FC = () => {
     const history = useHistory();
     return (
         <IonPage>
-            <IonHeader className="IonHeader">
+            <IonHeader className="IonHeader" translucent={true} mode="ios">
                 <IonGrid className="IonGrid">
                     <IonRow className="tabRow">
                         <IonCol size="4">
