@@ -1,9 +1,14 @@
 import app, { DocumentData, WhereFilterOp } from './Firebase';
 
 export default class FireStoreDB {
-    static db = app.firestore();
+    // static db = app.firestore();
+    db;
 
-    public static async fetchDoc<DocType>(path: string): Promise<DocumentData | undefined | null> {
+    constructor() {
+        this.db = app.firestore();
+    }
+
+    public async fetchDoc<DocType>(path: string): Promise<DocumentData | undefined | null> {
         try {
             const doc = await this.db.doc(path).get();
             return doc.data() as DocType;
@@ -12,7 +17,7 @@ export default class FireStoreDB {
         }
     }
 
-    public static async query<T>(
+    public async query<T>(
         collection: string,
         field: string,
         operator: WhereFilterOp,
@@ -24,7 +29,7 @@ export default class FireStoreDB {
         return query;
     }
 
-    public static async uploadDoc<DocType>(collection: string, fields: DocType): Promise<void> {
+    public async uploadDoc<DocType>(collection: string, fields: DocType): Promise<void> {
         try {
             await this.db.collection(collection).doc().set(fields);
         } catch (err) {

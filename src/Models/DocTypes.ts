@@ -3,3 +3,15 @@ export interface UserDoc {
     lastName: string;
     uid: string;
 }
+
+export interface ItemDoc {
+    id: string;
+    name: string;
+    category: string;
+    description: string;
+    imageUrl: string;
+    latitude: number;
+    longitude: number;
+    uid: string;
+    [key: string]: any;
+}

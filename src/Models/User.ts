@@ -37,7 +37,8 @@ export default class User {
             const res = await app.auth().createUserWithEmailAndPassword(email, password);
             if (res.user != null) {
                 const user = new User(res.user.uid, email, firstName, lastName);
-                FireBaseDB.uploadDoc<UserDoc>('users', {
+                const fireStoreDB = new FireStoreDB();
+                fireStoreDB.uploadDoc<UserDoc>('users', {
                     firstName: user.firstName,
                     lastName: user.lastName,
                     uid: user.lastName,
@@ -66,7 +67,8 @@ export default class User {
             if (res.user) {
                 const userResult = res.user;
 
-                const userDoc = await FireStoreDB.fetchDoc<UserDoc>(userResult.uid);
+                const fireStoreDB = new FireStoreDB();
+                const userDoc = await fireStoreDB.fetchDoc<UserDoc>(userResult.uid);
                 const user = new User(res.user.uid, email, userDoc?.firstName, userDoc?.lastName);
                 await user.fetchUserDetails();
                 return user;
