@@ -15,8 +15,8 @@ const NewItemView: React.FC<NewItemViewProps> = (props: NewItemViewProps) => {
     const [category, setCategory] = useState<ItemCategory>(ItemCategory.Component);
     const [description, setDescription] = useState<string>('');
     const [imageURL, setImageURL] = useState<string>('');
-    // const [latitude, setLatitude] = useState<number>(0);
-    // const [longitude, setLongitude] = useState<number>(0);
+    const [latitude, setLatitude] = useState<number>(0);
+    const [longitude, setLongitude] = useState<number>(0);
 
     const handleSubmit = () => {
         const newItem: ItemDoc = {
