@@ -3,6 +3,7 @@ import firebase from 'firebase';
 export const Timestamp = firebase.firestore.Timestamp;
 export type DocumentData = firebase.firestore.DocumentData;
 export type WhereFilterOp = firebase.firestore.WhereFilterOp;
+export type Geopoint = firebase.firestore.GeoPoint;
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
