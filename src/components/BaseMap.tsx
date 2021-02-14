@@ -28,7 +28,7 @@ const BaseMap = () => {
         const directions = new Directions({
             accessToken: 'pk.eyJ1Ijoic2Ftc29uaCIsImEiOiJja2w0OG15MXkwYnlwMnZxeHJveHNidWxvIn0.QSg83CVaQ3JwLPJJzMDp6w',
             unit: 'metric',
-            profile: 'mapbox/cycling'
+            profile: 'mapbox/driving',
         });
         map.addControl(directions, 'top-left');
 
