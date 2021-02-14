@@ -2,7 +2,7 @@ import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonIcon, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { bagHandle, mapOutline, person } from 'ionicons/icons';
+import { bagHandle, clipboard, key, mapOutline, person } from 'ionicons/icons';
 import AvailableItems from './pages/AvailableItems';
 import Map from './pages/Map';
 import Profile from './pages/YourProfile';
@@ -64,6 +64,14 @@ const App: React.FC = () => (
                     <IonTabButton tab="profile" href="/me">
                         <IonIcon icon={person} />
                         <IonLabel>Your Items</IonLabel>
+                    </IonTabButton>
+                    <IonTabButton tab="login" href="/login">
+                        <IonIcon icon={key} />
+                        <IonLabel>Login</IonLabel>
+                    </IonTabButton>
+                    <IonTabButton tab="register" href="/register">
+                        <IonIcon icon={clipboard} />
+                        <IonLabel>Register</IonLabel>
                     </IonTabButton>
                 </IonTabBar>
             </IonTabs>
