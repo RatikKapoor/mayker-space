@@ -3,10 +3,16 @@ import mapboxgl from 'mapbox-gl';
 import Directions from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
 import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css';
 import './BaseMap.scss';
+import Route from '../Models/Route';
 
-const BaseMap: React.FC = () => {
+interface MapProps {
+    route: Route;
+}
+
+const BaseMap: React.FC<MapProps> = (props: MapProps) => {
     mapboxgl.accessToken = 'pk.eyJ1Ijoic2Ftc29uaCIsImEiOiJja2w0OG15MXkwYnlwMnZxeHJveHNidWxvIn0.QSg83CVaQ3JwLPJJzMDp6w';
     useEffect(() => {
+        console.log('printing map' + props.route.originlat + ', ' + props.route.originlon);
         const map = new mapboxgl.Map({
             container: 'mapContainer',
             style: 'mapbox://styles/mapbox/streets-v11',
@@ -31,8 +37,8 @@ const BaseMap: React.FC = () => {
             profile: 'mapbox/driving',
             interactive: false,
         });
-        directions.setOrigin([-117.1425, 32.63638889]);
-        directions.setDestination([-116.5616667, 32.93583333]);
+        directions.setOrigin([props.route.originlat, props.route.originlon]);
+        directions.setDestination([props.route.destinationlat, props.route.destinationlon]);
         map.addControl(directions, 'top-left');
     }, []);
     return <div id="mapContainer" className="map"></div>;

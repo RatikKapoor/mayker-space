@@ -15,3 +15,13 @@ export interface ItemDoc {
     uid: string;
     [key: string]: any;
 }
+
+export interface RouteDoc {
+    id: string;
+    originlat: number;
+    originlon: number;
+    destinationlat: number;
+    destinationlon: number;
+    iid: string;
+    [key: string]: any;
+}
