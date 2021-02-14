@@ -52,15 +52,6 @@ const App: React.FC = () => {
         <IonApp>
             <IonReactRouter>
                 <IonTabs>
-                    <IonRouterOutlet>
-                        <Route path="/landing" component={Landing} />
-                        <Route path="/login" component={Login} />
-                        <Route path="/register" component={Register} />
-                        <PrivateRoute path="/items" component={AvailableItems} />
-                        <PrivateRoute path="/map" component={Map} />
-                        <PrivateRoute path="/me" component={Profile} />
-                        <Route path="/" render={() => <Redirect to="/landing" />} />
-                    </IonRouterOutlet>
                     <IonTabBar slot="bottom">
                         <IonTabButton tab="items" href="/items">
                             <IonIcon icon={bagHandle} />
@@ -83,6 +74,15 @@ const App: React.FC = () => {
                             <IonLabel>Register</IonLabel>
                         </IonTabButton>
                     </IonTabBar>
+                    <IonRouterOutlet id="main">
+                        <Route path="/landing" component={Landing} exact={true} />
+                        <Route path="/login" component={Login} exact={true} />
+                        <Route path="/register" component={Register} exact={true} />
+                        <PrivateRoute path="/items" component={AvailableItems} exact={true} />
+                        <PrivateRoute path="/map" component={Map} exact={true} />
+                        <PrivateRoute path="/me" component={Profile} exact={true} />
+                        <Route path="/" render={() => <Redirect to="/landing" />} exact={true} />
+                    </IonRouterOutlet>
                 </IonTabs>
             </IonReactRouter>
         </IonApp>
