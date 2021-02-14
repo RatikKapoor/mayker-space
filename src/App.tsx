@@ -38,7 +38,7 @@ const App: React.FC = () => {
         app.auth().onAuthStateChanged((user) => {
             if (user) {
                 console.log('User:', user);
-                redirectAfterAuthEvent('/item');
+                redirectAfterAuthEvent('/items');
             } else {
                 redirectAfterAuthEvent('/login');
             }
