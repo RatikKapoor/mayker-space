@@ -5,10 +5,10 @@ import { IonReactRouter } from '@ionic/react-router';
 import { bagHandle, clipboard, key, mapOutline, person } from 'ionicons/icons';
 import AvailableItems from './pages/AvailableItems';
 import Map from './pages/Map';
-import Profile from './pages/YourProfile';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Landing from './pages/Landing';
+import Profile from './pages/Profile';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -65,15 +65,7 @@ const App: React.FC = () => {
                         </IonTabButton>
                         <IonTabButton tab="profile" href="/me">
                             <IonIcon icon={person} />
-                            <IonLabel>Your Items</IonLabel>
-                        </IonTabButton>
-                        <IonTabButton tab="login" href="/login">
-                            <IonIcon icon={key} />
-                            <IonLabel>Login</IonLabel>
-                        </IonTabButton>
-                        <IonTabButton tab="register" href="/register">
-                            <IonIcon icon={clipboard} />
-                            <IonLabel>Register</IonLabel>
+                            <IonLabel>Your Profile</IonLabel>
                         </IonTabButton>
                     </IonTabBar>
 
