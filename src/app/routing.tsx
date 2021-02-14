@@ -1,4 +1,4 @@
-export const unAuthedRoutes = ['/landing'];
+export const unAuthedRoutes = ['/landing', '/login', '/register'];
 
 export default function redirectAfterAuthEvent(target: string): void {
     if (target == '/login') {
