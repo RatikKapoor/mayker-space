@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Redirect, Route, useHistory } from 'react-router-dom';
 import { IonApp, IonIcon, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
@@ -35,6 +35,7 @@ import { PrivateRoute } from './components/PrivateRoute';
 
 const App: React.FC = () => {
     const history = useHistory();
+    const [authed, setAuthed] = useState<boolean>(false);
 
     useEffect(() => {
         app.auth().onAuthStateChanged((user) => {
@@ -42,9 +43,12 @@ const App: React.FC = () => {
                 console.log('User:', user);
                 // redirectAfterAuthEvent('/items');
                 history.push('/items');
+                setAuthed(true);
             } else {
                 // redirectAfterAuthEvent('/login');
+                console.log('No user');
                 history.push('/login');
+                setAuthed(false);
             }
         });
         return () => {
@@ -55,39 +59,41 @@ const App: React.FC = () => {
     return (
         <IonApp>
             <IonReactRouter>
-                <IonTabs>
-                    <IonTabBar slot="bottom">
-                        <IonTabButton tab="items" href="/items">
-                            <IonIcon icon={bagHandle} />
-                            <IonLabel>Available Items</IonLabel>
-                        </IonTabButton>
-                        <IonTabButton tab="map" href="/map">
-                            <IonIcon icon={mapOutline} />
-                            <IonLabel>Routes</IonLabel>
-                        </IonTabButton>
-                        <IonTabButton tab="profile" href="/me">
-                            <IonIcon icon={person} />
-                            <IonLabel>Your Items</IonLabel>
-                        </IonTabButton>
-                        <IonTabButton tab="login" href="/login">
-                            <IonIcon icon={key} />
-                            <IonLabel>Login</IonLabel>
-                        </IonTabButton>
-                        <IonTabButton tab="register" href="/register">
-                            <IonIcon icon={clipboard} />
-                            <IonLabel>Register</IonLabel>
-                        </IonTabButton>
-                    </IonTabBar>
-                    <IonRouterOutlet id="main">
-                        <Route path="/landing" component={Landing} exact={true} />
-                        <Route path="/login" component={Login} exact={true} />
-                        <Route path="/register" component={Register} exact={true} />
-                        <PrivateRoute path="/items" component={AvailableItems} exact={true} />
-                        <PrivateRoute path="/map" component={Map} exact={true} />
-                        <PrivateRoute path="/me" component={Profile} exact={true} />
-                        <Route path="/" render={() => <Redirect to="/landing" />} exact={true} />
-                    </IonRouterOutlet>
-                </IonTabs>
+                {authed && (
+                    <IonTabs>
+                        <IonTabBar slot="bottom">
+                            <IonTabButton tab="items" href="/items">
+                                <IonIcon icon={bagHandle} />
+                                <IonLabel>Available Items</IonLabel>
+                            </IonTabButton>
+                            <IonTabButton tab="map" href="/map">
+                                <IonIcon icon={mapOutline} />
+                                <IonLabel>Routes</IonLabel>
+                            </IonTabButton>
+                            <IonTabButton tab="profile" href="/me">
+                                <IonIcon icon={person} />
+                                <IonLabel>Your Items</IonLabel>
+                            </IonTabButton>
+                            <IonTabButton tab="login" href="/login">
+                                <IonIcon icon={key} />
+                                <IonLabel>Login</IonLabel>
+                            </IonTabButton>
+                            <IonTabButton tab="register" href="/register">
+                                <IonIcon icon={clipboard} />
+                                <IonLabel>Register</IonLabel>
+                            </IonTabButton>
+                        </IonTabBar>
+                    </IonTabs>
+                )}
+                <IonRouterOutlet id="main">
+                    <Route path="/landing" component={Landing} exact={true} />
+                    <Route path="/login" component={Login} exact={true} />
+                    <Route path="/register" component={Register} exact={true} />
+                    <PrivateRoute path="/items" component={AvailableItems} exact={true} />
+                    <PrivateRoute path="/map" component={Map} exact={true} />
+                    <PrivateRoute path="/me" component={Profile} exact={true} />
+                    <Route path="/" render={() => <Redirect to="/landing" />} exact={true} />
+                </IonRouterOutlet>
             </IonReactRouter>
         </IonApp>
     );
