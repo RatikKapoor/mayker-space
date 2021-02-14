@@ -13,6 +13,7 @@ import Route from '../Models/Route';
 const Map: React.FC = () => {
     const [routes, setRoutes] = useState<Array<{ id: string; data: RouteDoc }>>();
     const [newRouteViewVisible, setNewRouteViewVisible] = useState<boolean>(false);
+
     const db = new FireStoreDB();
 
     async function getRoutes() {
@@ -42,7 +43,7 @@ const Map: React.FC = () => {
         };
     }, [routes]);
 
-    const testRoute = new Route('test', -117.1425, 32.63638889, -116.5616667, 32.93583333, 'herlnkjf');
+    const testRoute = new Route('test', 37.7577, -122.4376, 37.7677, -122.4568, 'herlnkjf');
 
     return (
         <IonPage>
