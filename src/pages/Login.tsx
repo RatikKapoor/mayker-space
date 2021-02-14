@@ -12,16 +12,19 @@ import {
 } from '@ionic/react';
 import './Login.scss';
 import User from '../Models/User';
-import redirectAfterAuthEvent from '../app/routing';
+import { useHistory } from 'react-router';
+// import redirectAfterAuthEvent from '../app/routing';
 
 const Login: React.FC = () => {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
+    const history = useHistory();
 
     async function handleSubmit(email: string, password: string) {
         if (await User.login(email, password)) {
             alert('Login success');
-            redirectAfterAuthEvent('/items');
+            // redirectAfterAuthEvent('/items');
+            history.push('/items');
         } else {
             alert('Could not login');
         }

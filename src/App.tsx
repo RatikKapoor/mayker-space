@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect, Route, useHistory } from 'react-router-dom';
 import { IonApp, IonIcon, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { bagHandle, clipboard, key, mapOutline, person } from 'ionicons/icons';
@@ -30,17 +30,21 @@ import '@ionic/react/css/display.css';
 import './theme/variables.scss';
 import app from './Models/Firebase';
 //import User from './Models/User';
-import redirectAfterAuthEvent from './app/routing';
+// import redirectAfterAuthEvent from './app/routing';
 import { PrivateRoute } from './components/PrivateRoute';
 
 const App: React.FC = () => {
+    const history = useHistory();
+
     useEffect(() => {
         app.auth().onAuthStateChanged((user) => {
             if (user) {
                 console.log('User:', user);
-                redirectAfterAuthEvent('/items');
+                // redirectAfterAuthEvent('/items');
+                history.push('/items');
             } else {
-                redirectAfterAuthEvent('/login');
+                // redirectAfterAuthEvent('/login');
+                history.push('/login');
             }
         });
         return () => {
