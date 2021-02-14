@@ -1,7 +1,19 @@
 import React from 'react';
-import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/react';
+import {
+    IonButton,
+    IonCard,
+    IonCardContent,
+    IonCardHeader,
+    IonCardSubtitle,
+    IonCardTitle,
+    IonItem,
+    IonTab,
+    IonTabBar,
+    IonTabButton,
+} from '@ionic/react';
 import './ItemView.scss';
 import Item from '../Models/Item';
+import ItemButtons from './ItemButtons';
 
 interface ItemProps {
     item: Item;
@@ -9,15 +21,17 @@ interface ItemProps {
 
 const ItemView: React.FC<ItemProps> = (props: ItemProps) => {
     return (
-        <IonCard>
-            <img src={props.item.imageUrl} className="headImage"></img>
-            <IonCardHeader>
-                <IonCardSubtitle>{props.item.category}</IonCardSubtitle>
-                <IonCardTitle>{props.item.name}</IonCardTitle>
-            </IonCardHeader>
-            <IonCardContent>{props.item.description}</IonCardContent>
-            <IonButton>Request</IonButton>
-        </IonCard>
+        <IonItem className="itemContainer">
+            <IonCard className="itemCard">
+                <IonCardHeader>
+                    <IonCardTitle>{props.item.name}</IonCardTitle>
+                    <IonCardSubtitle>{props.item.category}</IonCardSubtitle>
+                </IonCardHeader>
+                <IonCardContent className="itemDescription">{props.item.description}</IonCardContent>
+            </IonCard>
+            <img src={props.item.imageUrl} className="itemImg"></img>
+            <ItemButtons />
+        </IonItem>
     );
 };
 
