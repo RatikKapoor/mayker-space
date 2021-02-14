@@ -1,6 +1,7 @@
 import { IonContent, IonHeader, IonPage, IonTabBar, IonTabButton, IonText, IonTitle, IonLabel } from '@ionic/react';
 import React from 'react';
 import './Landing.scss';
+import landingbg from './images/home.svg';
 
 const Landing: React.FC = () => {
     return (
@@ -21,7 +22,9 @@ const Landing: React.FC = () => {
                     </IonTabButton>
                 </IonTabBar>
             </IonHeader>
-            <IonContent className="homeContainer"></IonContent>
+            <IonContent className="homeContainer">
+                <img src={landingbg} />
+            </IonContent>
         </IonPage>
     );
 };
