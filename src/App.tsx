@@ -53,13 +53,13 @@ const App: React.FC = () => {
             <IonReactRouter>
                 <IonTabs>
                     <IonRouterOutlet>
-                        <Route exact path="/landing" component={Landing} />
-                        <Route exact path="/login" component={Login} />
-                        <Route exact path="/register" component={Register} />
-                        <PrivateRoute exact path="/items" component={AvailableItems} />
-                        <PrivateRoute exact path="/map" component={Map} />
-                        <PrivateRoute exact path="/me" component={Profile} />
-                        <Route exact path="/" render={() => <Redirect to="/landing" />} />
+                        <Route path="/landing" component={Landing} />
+                        <Route path="/login" component={Login} />
+                        <Route path="/register" component={Register} />
+                        <PrivateRoute path="/items" component={AvailableItems} />
+                        <PrivateRoute path="/map" component={Map} />
+                        <PrivateRoute path="/me" component={Profile} />
+                        <Route path="/" render={() => <Redirect to="/landing" />} />
                     </IonRouterOutlet>
                     <IonTabBar slot="bottom">
                         <IonTabButton tab="items" href="/items">

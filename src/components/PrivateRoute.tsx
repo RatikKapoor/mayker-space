@@ -6,10 +6,10 @@ import { loadingComponent } from './Loading';
 interface PrivateRouteInterface {
     component: React.FC;
     path: string;
-    exact: boolean;
+    exact?: boolean;
 }
 
-export const PrivateRoute: React.FC<{ component: React.FC; path: string; exact: boolean }> = (
+export const PrivateRoute: React.FC<{ component: React.FC; path: string; exact?: boolean }> = (
     props: PrivateRouteInterface,
 ) => {
     const [loading, setLoadingState] = useState(true);
