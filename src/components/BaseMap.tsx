@@ -15,11 +15,7 @@ const BaseMap = () => {
         //Set navigation controls
         const nav = new mapboxgl.NavigationControl();
         map.addControl(nav, 'top-right');
-        //Set marker to Ratik's House
-        const marker = new mapboxgl.Marker()
-            //This will set the marker
-            .setLngLat([-113.92, 50.9])
-            .addTo(map);
+
         //Geolocate
         const geolocate = new mapboxgl.GeolocateControl({
             positionOptions: {
