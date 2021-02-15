@@ -1,7 +1,12 @@
+<img alt="NodeJS" src="https://img.shields.io/badge/node.js%20-%2343853D.svg?&style=for-the-badge&logo=node.js&logoColor=white"/> <img alt="TypeScript" src="https://img.shields.io/badge/typescript%20-%23007ACC.svg?&style=for-the-badge&logo=typescript&logoColor=white"/> <img alt="React" src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/> <img alt="Redux" src="https://img.shields.io/badge/redux%20-%23593d88.svg?&style=for-the-badge&logo=redux&logoColor=white"/> <img alt="SASS" src="https://img.shields.io/badge/SASS%20-hotpink.svg?&style=for-the-badge&logo=SASS&logoColor=white"/>
 ---
 ### [Mayker.space - Mayke Anything Possible](https://mayker.space/)
 ---
 ![Maykerspace](https://i.imgur.com/4QVLNiS.png)
+---
+
+[![Mayker Space](http://img.youtube.com/vi/Pj5mkXYoZG4/0.jpg)](http://www.youtube.com/watch?v=Pj5mkXYoZG4 "Mayker Space")
+
 ---
 ### What is MaykerSpace?
 ---
@@ -112,7 +117,33 @@ As with any project, we wanted to identify some **key areas of improvements** an
 
 ###### Because we are also on our local engineering students' society, we may see actual use in offering this service and may work towards further implementation for a feasible product, however, it would require more rigid testing and development.
 ---
+## Prerequisites
+---
+Ensure that you have the standard Node.js development tools available to use and the Yarn Package Manager installed globally.
 
-Also, for anyone curious on why we spelled it as Mayker, Makr.space and Maker.space were already taken :(
+-   [Node.js](https://nodejs.org/en/)
+-   [Yarn](https://yarnpkg.com)
+-   [Ionic CLI](https://ionicframework.com/docs/cli)
+
+---
+## Installation
+---
+To develop or run this repository locally:
+
+```bash
+git clone https://github.com/RatikKapoor/mayker-space.git
+cd mayker-space
+yarn install
+ionic serve
+```
+---
+## Contributing
+---
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. Please base all pull requests off of the main branch as they will be rebase merged. Check that there are no linter issues before opening a pull request by running `yarn run lint-check`.
+
+---
+## License
+---
+[MIT](https://choosealicense.com/licenses/mit/)
 
 
