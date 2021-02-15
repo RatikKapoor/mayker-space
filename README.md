@@ -117,7 +117,7 @@ As with any project, we wanted to identify some **key areas of improvements** an
 
 ###### Because we are also on our local engineering students' society, we may see actual use in offering this service and may work towards further implementation for a feasible product, however, it would require more rigid testing and development.
 ---
-## Prerequisites
+### Prerequisites
 ---
 Ensure that you have the standard Node.js development tools available to use and the Yarn Package Manager installed globally.
 
@@ -126,7 +126,7 @@ Ensure that you have the standard Node.js development tools available to use and
 -   [Ionic CLI](https://ionicframework.com/docs/cli)
 
 ---
-## Installation
+### Installation
 ---
 To develop or run this repository locally:
 
@@ -137,12 +137,12 @@ yarn install
 ionic serve
 ```
 ---
-## Contributing
+### Contributing
 ---
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. Please base all pull requests off of the main branch as they will be rebase merged. Check that there are no linter issues before opening a pull request by running `yarn run lint-check`.
 
 ---
-## License
+### License
 ---
 [MIT](https://choosealicense.com/licenses/mit/)
 
